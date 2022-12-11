@@ -1,0 +1,122 @@
+@import '../../components/ComponentsScss/Variables';
+@import '../../components/ComponentsScss/mixins';
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+.reviews {
+    background: $white;
+    background: url('../../../public/image/shadow.jpg') 140% 145% no-repeat;
+    padding: 180px 0;
+    .slick-track {
+        margin-bottom: 40px;
+    }
+    .slick-slider {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .slick-slide {
+        padding-right: 20px;
+    }   
+}
+
+.reviews__title {
+    @include adaptiv-font(63, 28);
+    text-transform: uppercase;
+    color: $orange;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.reviews__button {
+    @include adaptiv-font(21, 18);
+    color: $white;
+    font-weight: 600;
+    max-width: 234px;
+    padding: 20px 10px;
+    background-color: $grey;
+    margin: 0 auto;
+    margin-bottom: 120px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+}
+
+.reviews__items {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.reviews__item {
+    flex: 0 0 30%;
+}
+
+.reviews__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews__commas {
+    font-size: 100px;
+    font-weight: 700;
+}
+
+.reviews__description {
+    max-width: 817px;
+    font-size: 25px;
+    color: #3f3f3f;
+    font-weight: 600;
+    text-align: center;
+    max-width: 817px;
+    margin-bottom: 40px;
+}
+
+.reviews__caption {
+    font-size: 21px;
+    line-height: 33px;
+    color: #3f3f3f;
+    font-weight: 700;
+    text-align: center;
+}
+
+.item-reviews__title {
+    @include adaptiv-font(24, 18);
+    line-height: 33px;
+    color: $greyText;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.item-reviews__text {
+    font-size: 19px;
+    line-height: 25px;
+    color: $greyText;
+    font-weight: 400;
+}
+
+.reviews__caption {
+    font-size: 21px;
+    line-height: 33px;
+    color: $greyText;
+    font-weight: 700;
+    text-align: center;
+}
+
+@include md {
+    .reviews {
+        background: url('../../../public/image/shadow.jpg') -150% 110% no-repeat;
+    }
+    .reviews__items {
+        margin-bottom: 150px;
+    }
+}
+
+@include sm {
+    .reviews {      
+        background: none;
+    }
+    .reviews__items {
+        margin-bottom: 100px;
+    }
+}

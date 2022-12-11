@@ -1,0 +1,134 @@
+@import '../../components/ComponentsScss/Variables';
+@import '../../components/ComponentsScss/mixins';
+
+.time__slider {
+    position: relative;
+}
+
+.time__container {
+    position: absolute;
+    top: 0;
+}
+
+.slider__image {
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.slider {
+    height: 100%;
+    width: 100%;
+}
+
+.slick-slider {
+    display: flex;
+}
+
+.slick-dots {
+    bottom: 20px;
+}
+
+.slick-dots li button:before {
+    font-size: 20px;
+}
+
+.time {
+    position: relative;
+    padding: 180px 0;    
+    background: url('../../../public/image/timeBack.jpg') no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background: filter(
+        linear-gradient(
+            0deg,
+            rgba(52, 52, 52, 0.702) 0%,
+            rgba(67, 64, 55, 0.471) 100%
+        )
+    );
+}
+
+.image-time__shape {
+    filter: drop-shadow(2.575px 4.286px 2.5px rgba(162, 156, 156, 0.75));
+    position: absolute;
+    bottom: -2px;
+    transform: rotate(180deg);
+    width: 100%;
+}
+
+.time__columns {
+    display: flex;
+}
+
+.time__content {
+    display: flex;
+    flex: 0 0 50%;
+    flex-direction: column;
+}
+.content-time__title {
+    @include adaptiv-font(92, 32);
+    color: $lightOrange;
+    font-weight: 800;
+    filter: drop-shadow(2.575px -4.286px 2.5px rgba(84, 82, 79, 0.22));
+    margin-bottom: 33px;
+}
+
+.content-time__subtitle {
+    font-size: 25px;
+    letter-spacing: 5px;
+    color: $greyText;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 66px;
+}
+.content-time__button {
+    display: flex;
+    justify-content: center;
+    max-width: 218px;
+    border-radius: 21px;
+    background-color: $white;
+    padding: 13px 0;
+    font-size: 25px;
+    color: $lightBlack;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+    border: 1px solid $white;
+
+    &:hover {
+        border: 1px solid $lightBlack;
+    }
+}
+.content-time__text {
+    font-size: 21px;
+    letter-spacing: 1px;
+    color: $greyText;
+    font-weight: 400;
+    font-style: italic;
+    max-width: 500px;
+}
+
+@include lg-min {
+    .image-time__shape {
+        bottom: -70px;
+    }
+}
+@include md {
+    .time {
+        padding: 120px 0;
+        background-position: 25% 50%;
+    }
+    .time__columns {
+        flex-direction: column;
+    }
+    .content-time__subtitle {
+        margin-bottom: 40px;
+    }
+    .content-time__text {
+        max-width: 400px;
+    }
+}
+
+

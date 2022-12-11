@@ -1,0 +1,94 @@
+@import '../../components/ComponentsScss/Variables';
+@import '../../components/ComponentsScss/mixins';
+
+
+.reviews-page {
+    padding: 120px 0;
+}
+
+.reviews__title {
+    margin-bottom: 70px;
+}
+.reviews-page__items {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    padding: 0 50px;
+}
+.reviews-page__item {
+    background-color: #f5f4f4;
+    border-radius: 20px;
+    padding: 20px 30px;
+    margin-bottom: 40px;
+    &:hover {
+        scale: 1.1;
+        box-shadow: $shadow;
+    }
+}
+
+.reviews__form-input,
+.reviews__form-textarea {
+    @include adaptiv-font(18, 16);
+    border: 1px solid $grey;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    &:hover {
+        box-shadow: $shadow;
+    }
+    &::placeholder {
+        @include adaptiv-font(18, 16);
+    }
+}
+
+.reviews__form-textarea{    
+        width: 100%;
+        min-height: 300px;    
+}
+
+.reviews__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 0 50px;
+}
+.reviews__form-title {
+    @include adaptiv-font(38, 20);
+    text-align: center;
+    color: $lightOrange;
+    margin-bottom: 30px;
+}
+
+.reviews__form-label {
+    @include adaptiv-font(20, 18);
+    font-weight: 600;
+}
+
+.reviews__form-button {
+    @include adaptiv-font(18, 16);
+    align-self: flex-start;
+    margin: 0;
+    border: none;
+    padding: 20px;
+    letter-spacing: 0.5px;
+}
+
+@include md {
+    .reviews-page {
+        padding: 80px 0;
+    }
+    .reviews__form-textarea{         
+        min-height: 250px;    
+}
+}
+
+@include sm {
+    .reviews__form-input {
+        width: 100%;
+    }
+    .reviews__form-textarea{         
+        min-height: 150px;    
+}
+}
+

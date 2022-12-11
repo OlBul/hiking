@@ -1,0 +1,168 @@
+@import '../../components/ComponentsScss/Variables';
+@import '../../components/ComponentsScss/mixins';
+
+.story {
+    padding: 50px 0 180px 0;
+}
+
+.form__story {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search__story {
+   flex: 0 1 350px;
+    font-size: 16px;
+    border: 1px solid #ebe6e6;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.story__photo {
+    max-width: 500px;
+    padding: 50px 50px 50px 0;
+    float: left;
+    &:nth-child(1) {
+        padding: 0 50px 50px 0;
+    }
+    &:nth-child(even) {
+        float: right;
+    }
+    img {
+        max-width: 100%;
+    }
+}
+
+.story__text {
+    @include adaptiv-font(20, 16);
+    margin-bottom: 30px;
+    text-indent: 30px;
+    font-weight: 400;
+    line-height: 1.5;
+    &::first-letter {
+        &::before {
+            content: '  ';
+        }
+    }
+}
+
+.story__title {
+    @include adaptiv-font(52, 32);
+    color: $lightOrange;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.story__subtitle {
+    @include adaptiv-font(28, 20);
+    color: $lightOrange;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.story__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 54px;
+}
+
+.story__likes {
+    display: flex;
+    gap: 15px;
+}
+
+.story__likes-count {
+display: flex;
+align-items: center;
+gap: 5px;
+span {
+    font-size: 20px;
+    color: #000;
+}
+}
+//========================================
+
+.story__container {
+    padding: 0 100px;
+}
+.story__item {
+    background-color: rgb(235, 230, 230);
+    padding: 20px 15px;
+    &:hover {
+        box-shadow: $shadow;
+    }
+}
+
+.story__column {
+    display: flex;
+    gap: 20px;
+}
+.story__item_img {
+    max-width: 150px;
+    img {
+        max-width: 100%;
+    }
+}
+.story__item_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.story__item_title {
+    @include adaptiv-font(22, 18);
+    color: $greyText;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.story__item_text {
+    @include adaptiv-font(20, 16);
+    font-weight: 400;
+    margin-bottom: 10px;
+    padding-right: 25px;
+}
+
+.story__buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.likes__count {
+    display: flex;
+}
+
+.story__btn {
+    @include adaptiv-font(20, 18);
+    display: inline-flex;
+    color: $greyText;
+    padding: 10px;
+    font-weight: 500;
+    &:hover {
+        color: $orange;
+    }
+}
+
+.pagination {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    li {
+        font-size: 18px;
+        padding: 5px 10px;
+        border: 1px solid #ebe6e6;
+       
+    }
+    li.active {
+        background-color: #ebe6e6;
+    }
+}
+
+@include md {
+    .story__container {
+        padding: 0 20px;
+    }
+}

@@ -1,0 +1,122 @@
+@import './Variables';
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: $greyText;
+    &.lock {
+        overflow: hidden;
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: $white;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+.button {
+    position: relative;
+    transition: $transition;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 5px;
+    line-height: 21px;
+    text-transform: uppercase;
+    border-radius: 38px;
+
+    &:focus {
+        outline: 0;
+    }
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.5);
+        width: 60px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0.5;
+        filter: blur(30px);
+        transform: translateX(-100px) skewX(-15deg);
+    }
+    &::after {
+        content: '';
+        display: block;
+        background: rgba(255, 255, 255, 0.2);
+        position: absolute;
+        width: 30px;
+        height: 100%;
+        left: 30px;
+        top: 0;
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-100px) skewX(-15deg);
+    }
+    &:hover:before {
+        transform: translateX(400px) skewX(-15deg);
+        opacity: 0.6;
+        transition: 0.7s;
+    }
+    &:hover:after {
+        transform: translateX(400px) skewX(-15deg);
+        opacity: 1;
+        transition: 0.7s;
+    }
+}
+
+input {
+    border: none;
+    &:focus-visible {
+        outline: 0px;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+input[type='text']::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+input[type='text']::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+    display: none;
+}
+.container {
+    max-width: 1360px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.active {
+    color: $orange;
+    .header__item_submenu {
+        .arrow {
+            color: $orange;
+        }
+    }
+}

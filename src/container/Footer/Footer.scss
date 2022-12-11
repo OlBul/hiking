@@ -1,0 +1,102 @@
+@import '../../components/ComponentsScss/Variables';
+@import '../../components/ComponentsScss/mixins';
+
+
+.footer {
+    position: relative;
+    background-color: $greyBackgraund;
+    padding: 120px 0;
+}
+
+.footer__columns {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    gap: 34px;
+    justify-content: space-between;
+    grid-template-areas: 'title about services other';
+}
+
+.footer__column {
+    &:nth-child(1) {
+        grid-area: title;
+    }
+    &:nth-child(2) {
+        grid-area: about;
+    }
+    &:nth-child(3) {
+        grid-area: services;
+    }
+    &:nth-child(4) {
+        grid-area: other;
+    }
+}
+
+.column-footer__title {
+    @include adaptiv-font(30, 24);
+    color: $white;
+    font-weight: 400;
+    font-family: 'Montserrat';
+    margin-bottom: 30px;
+}
+
+.column-footer__text {
+    @include adaptiv-font(20, 16);
+    color: $white;
+    font-weight: 400;
+    font-family: 'Montserrat';
+    max-width: 488px;
+    margin-bottom: 40px;
+}
+
+.column-footer__link {
+    @include adaptiv-font(20, 16);
+    line-height: 38px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: 'Montserrat';
+}
+
+.column-footer__icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    .icon-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 42px;
+        height: 42px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        padding: 5px;
+        &:hover {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+    }
+}
+
+@include md {
+    .footer {
+        padding: 150px 0;
+    }
+    .footer__columns {
+        grid-template: auto/ 1fr 1fr 1fr;
+        grid-template-areas: 'title title title' 'about services other';
+    }
+    .column-footer__text {
+        max-width: 100%;
+    }
+}
+
+@include sm {
+    .footer {
+        padding: 100px 0 80px 0;
+    }
+    .footer__backgraund_top {
+        top: -40px;
+    }
+    .footer__columns {
+        grid-template: auto/ 1fr;
+        grid-template-areas: 'title' 'about' 'services' 'other';
+    }
+}

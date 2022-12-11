@@ -1,0 +1,133 @@
+@import '../../components/ComponentsScss/Variables';
+@import '../../components/ComponentsScss/mixins';
+
+
+.articales {
+    position: relative;
+    padding: 180px 0 180px 0;
+    background-color: $white;
+}
+
+.articales__container {
+    position: relative;
+    z-index: 3;
+}
+
+.articales__title {
+    @include adaptiv-font(63, 28);
+    text-transform: uppercase;
+    color: $orange;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.articales__text {
+    max-width: 800px;
+    font-size: 27px;
+    color: $grey;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 auto 80px auto;
+}
+
+.articales__list {
+    display: grid;
+    gap: 87px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: 1fr;
+    margin-bottom: 54px;
+    grid-template-areas: 'articales1 articales2 articales3';
+}
+
+.articales__item {
+    background-color: $greyBackgraund;
+    color: $white;
+    &:hover {
+        scale: 1.1;
+        box-shadow: $shadow;
+    }
+}
+.articales__item_content {
+    padding: 0 18px 67px 18px;
+}
+
+.articales__item_img {
+    position: relative;
+    margin: 0 0 56px 0;
+    padding: 0 0 79% 0;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.articales__item_title {
+    @include adaptiv-font(29, 20);
+    font-weight: 700;
+    padding-bottom: 21px;
+}
+
+.articales__item_text {
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.articales__decore {
+    position: absolute;
+    bottom: 25px;
+    left: -25%;
+    z-index: 2;
+    img {
+        max-width: 100%;
+    }
+}
+
+@include lg {
+    .articales {
+        padding:120px 0;
+    }
+    .articales__decore {
+        bottom: 0;
+    }
+    .articales__list {
+        gap: 20px;
+    }
+}
+
+@include md {
+    .articales__text,
+    .articales__title {
+        margin-bottom: 30px;
+    }
+
+    .articales__list {
+        grid-template: 1fr 1fr/ 1fr 1fr;
+        margin-bottom: 54px;
+    }
+}
+
+@include sm {
+    .articales {
+        padding: 100px 0;
+    }
+    .articales__list {
+        grid-template: 1fr/ 1fr;
+        margin-bottom: 54px;
+    }
+}
+
+.articales__button {
+    @include adaptiv-font(23, 18);
+    background-color: $grey;
+    justify-content: center;
+    max-width: 334px;
+    color: $white;
+    padding: 29px 0;
+    font-weight: 800;
+    margin: 0 auto;
+}

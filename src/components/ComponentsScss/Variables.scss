@@ -1,0 +1,26 @@
+@use 'sass:math';
+
+$white: #ffffff;
+$lightBlack: #776c64;
+$greyText: #54524f;
+$grey: #7f7770;
+$greyBackgraund: #7f776f;
+$lightGrey: #c3bfbb;
+$lightOrange: #deb37e;
+$orange: #e2a355;
+$transition: all 1s;
+$shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+$ul: 1339.98px;
+$xl: 1199.98px;
+$lg: 991.98px;
+$md: 767.98px;
+$sm: 575.98px;
+$gap: 20px;
+$gap-sm: math.div($gap, 2);
+$gap-lg: $gap * 1.5;
+$gap-x2: $gap * 2;
+$gap-x2: $gap * 2;
+$gap-x3: $gap * 3;
+$gap-x4: $gap * 4;
+$gap-x5: $gap * 5;

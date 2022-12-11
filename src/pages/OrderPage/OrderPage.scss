@@ -1,0 +1,116 @@
+@import '../../components/ComponentsScss/Variables';
+@import '../../components/ComponentsScss/mixins';
+
+
+.order {
+    padding: 100px;
+    margin: 0 auto;
+    background-color: rgb(236, 234, 234);
+
+    input,
+    textarea {
+        @include adaptiv-font(18, 16);
+        border: 1px solid $grey;
+        border-radius: 20px;
+        padding: 10px 20px;
+        margin-top: 10px;
+        &:hover {
+            box-shadow: $shadow;
+        }
+        &::placeholder {
+            @include adaptiv-font(18, 16);
+        }
+    }
+}
+
+.order__content {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    padding: 30px;
+}
+
+.order__title {
+    @include adaptiv-font(42, 28);
+    color: #deb37e;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.order__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.order__item {
+    margin-bottom: 30px;
+}
+
+.order__label {
+    @include adaptiv-font(18, 16);
+    font-weight: 600;
+}
+
+.order__error {
+    @include adaptiv-font(18, 16);
+    color: red;
+}
+
+.order__button {
+    @include adaptiv-font(18, 16);
+    background-color: $grey;
+    max-width: 334px;
+    color: $white;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.order__answer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 120px auto;
+    justify-content: center;
+    padding: 120px 0;
+    border: 1px solid $greyText;
+    border-radius: 38px;
+    box-shadow: $shadow;
+}
+
+.order__answer-title {
+    @include adaptiv-font(38, 24);
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.order__answer-text {
+    @include adaptiv-font(30, 22);
+    font-weight: 500;
+}
+
+.order__form-textarea {
+    width: 100%;
+    min-height: 300px;
+}
+
+@include md {
+    .order {
+        padding: 80px 0;
+    }
+    .order__form-textarea {       
+        min-height: 250px;
+    }
+}
+
+@include sm {
+    .order__content {
+        padding: 30px 15px;
+    }
+    .order__form-textarea {      
+        min-height: 150px;
+    }
+}

@@ -1,0 +1,65 @@
+@import '../../components/ComponentsScss/Variables';
+@import '../../components/ComponentsScss/mixins';
+@import '../../components/ComponentsScss/Components.scss';
+
+.explore {
+    position: relative;
+    background: url('../../../public/image/explore.jpg') 50% 50% / cover
+        no-repeat;
+    padding: 300px 0;
+}
+
+.explore__shape_top {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    filter: drop-shadow(2.575px -4.286px 2.5px rgba(162, 156, 156, 0.75));
+    img {
+        width: 100%;
+    }
+}
+
+.explore__title {
+    @include adaptiv-font(72, 32);   
+    color: $lightOrange;
+    font-weight: 800;
+    font-style: italic;
+    text-align: right;
+    filter: drop-shadow(2.575px -4.286px 2.5px rgba(84, 82, 79, 0.36));
+    span {
+        @include adaptiv-font(76, 32);
+        color: $greyText;
+    }
+}
+
+.explore__shape_bottom {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    transform: rotate(180deg);
+    img {
+        width: 100%;
+    }
+}
+
+@include lg {
+    .explore {
+        padding: 300px 0;
+    }
+}
+@include md {
+    .explore {
+        padding: 200px 0;
+    }
+}
+
+@include sm {
+    .explore {
+        padding: 100px 0;
+    }
+    .explore__shape_top {
+        top: -50px;
+    }
+}

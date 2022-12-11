@@ -1,0 +1,84 @@
+@import '../../components/ComponentsScss/Variables';
+@import '../../components/ComponentsScss/mixins';
+
+
+.hiking {
+    position: relative;    
+    background-color: $greyBackgraund;
+    opacity: 0.6;
+    padding: 180px 0;
+}
+
+.hiking__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hiking__title {
+    @include adaptiv-font(58, 26);
+    color: $white;
+    font-weight: 600;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.hiking__text {
+    max-width: 940px;   
+    @include adaptiv-font(29, 20);
+    color: #dbdbdb;
+    font-weight: 400;
+    font-family: 'Open Sans';
+    text-align: center;
+}
+.hiking__backgraund_top {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    img {
+        width: 100%;
+    }
+}
+.hiking__backgraund_bottom {
+    transform: rotate(180deg);
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    right: 0;
+    filter: drop-shadow(2.575px 4.286px 2.5px rgba(162, 156, 156, 0.75));
+
+    img {
+        width: 100%;
+    }
+}
+
+.hiking__decore {
+    background-color: $greyBackgraund;
+    opacity: 0.8;
+    position: absolute;
+    bottom: 50%;
+    left: -25%;    
+    img {
+        width: 100%;
+    }
+}
+
+@include lg {    
+    .hiking__title {
+        margin-bottom: 30px;
+    }
+}
+
+@include md {
+    .hiking {
+        padding: 200px 0;
+    }
+}
+
+@include sm {
+    .hiking {
+        padding: 100px 0;
+    }
+}

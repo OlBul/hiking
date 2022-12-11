@@ -1,0 +1,66 @@
+@import '../../components/ComponentsScss/Variables';
+@import '../../components/ComponentsScss/mixins';
+
+
+.review__form {
+    max-width: 1340px;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.review__label {
+    font-size: 22px;
+    color: $greyText;
+    margin-bottom: 20px;
+}
+
+.review__input {
+    border: 1px solid $lightGrey;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    &:focus-visible {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+        border: 1px solid $lightGrey;
+        outline: none;
+    }
+    &::placeholder {
+        font-size: 16px;
+        color: $lightGrey;
+        font-family: 'Open Sans', sans-serif;
+    }
+}
+
+textarea.review__input {
+    width: 50%;
+    min-height: 200px;
+}
+
+.review__error {
+    color: red;
+}
+.review__form_name,
+.review__form_text {
+    margin-bottom: 40px;
+}
+
+.review__btn {
+    width: 200px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    color: $white;
+    background-color: $greyText;
+    padding: 10px 10px;
+    border-radius: 30px;
+    align-self: flex-start;
+    border: 1px solid $greyText;
+    transition: all 0.5s;
+    &:hover {
+        color: $greyText;
+        background-color: $white;
+    }
+}
