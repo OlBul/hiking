@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import './ArticalesList.scss'
 import ArticalesItem from './ArticalesItem'
-import articalesArray from './articalesArray'
 import articalesBack from '../../assets/image/articalesBack.jpg'
 
 import { Link } from 'react-router-dom'

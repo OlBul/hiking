@@ -21,6 +21,7 @@ export const ReviewsForm = (props: Props) => {
         name: '',
         text: '',
     })
+    console.log(review)
 
     const onSend = () => {
         setReview((prevState: ReviewsArrayProps[]) => {

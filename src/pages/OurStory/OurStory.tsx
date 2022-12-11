@@ -29,6 +29,7 @@ const OurStory = ({
     const [articaleInStories, setArticaleInStories] = useState<StoryProps>({
         1: 1,
     })
+    console.log(setArticaleInStories)
     const isLikes = useAppSelector(
         (state) => state.likeState.isLike[parseInt(`${id}`)]
     )

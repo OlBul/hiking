@@ -19,7 +19,7 @@
     display: flex;
     gap: 30px;
     align-items: center;
-    justify-content: space-between;   
+    justify-content: space-between;
     font-weight: 500;
 }
 
@@ -33,7 +33,7 @@
 .contact__number,
 .contact__email {
     color: $greyText;
-    @include adaptiv-font(24, 16);  
+    @include adaptiv-font(24, 16);
     font-weight: 500;
     background-image: linear-gradient(currentColor, currentColor);
     background-position: 0% 100%;
@@ -47,19 +47,19 @@
 
 .column-contacts__icons {
     display: flex;
-gap: 10px;
-align-items: center;
-justify-content: center;
-.icon-item {
-    display: flex;
-    justify-content: center;
+    gap: 10px;
     align-items: center;
-    width: 42px;
-    height: 42px;   
-    &:hover {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    justify-content: center;
+    .icon-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 42px;
+        height: 42px;
+        &:hover {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
     }
-}
 }
 
 .contact__map {
@@ -76,7 +76,6 @@ justify-content: center;
         flex-wrap: wrap;
         justify-content: center;
     }
-   
 }
 
 @include sm {
