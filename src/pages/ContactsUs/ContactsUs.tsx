@@ -28,7 +28,7 @@ const ContactsUs = (props: Props) => {
                                 <p>Ukraine</p>
                             </div>
 
-                            <div className="">
+                            <div>
                                 Phone:{' '}
                                 <a
                                     href="tel:+30977778899"
