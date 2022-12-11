@@ -7,7 +7,6 @@ import { useAppSelector } from 'redux/hooks'
 
 const OurStoriesList = () => {
     const [valueOurStory, setValueOurStory] = useState<string>('')
-    const [page, setPage] = useState(1)
 
     const ourStoriesArray = useAppSelector((state) => state.ourStories)
 
@@ -51,21 +50,6 @@ const OurStoriesList = () => {
                                     </div>
                                 )
                             )}
-                        <div className="story__pagination">
-                            <ul className="pagination">
-                                {[...Array(5)].map((_, i) => (
-                                    <li
-                                        key={i}
-                                        onClick={() => setPage(i + 1)}
-                                        className={
-                                            page === i + 1 ? 'active' : ''
-                                        }
-                                    >
-                                        {i + 1}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </section>
