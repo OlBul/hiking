@@ -4,28 +4,17 @@ import './HeaderMenu.scss'
 
 type Props = {
     getClassActive: () => void
-    menuActive: {
-        headerMenu: boolean
-        bodyMenu: string
-    }
+
+    menuActive: boolean
 }
 
 const HeaderMenu = ({ menuActive, getClassActive }: Props) => {
     const [openSubmenu, setOpenSubmenu] = useState<boolean>(false)
-    //const [closeMenu, setCloseMenu] = useState<boolean>(false)
-
-    /* const getCloseMenu = () => {
-        return !menuActive.headerMenu ? false : false
-    } */
 
     return (
         <>
             <nav
-                className={
-                    menuActive.headerMenu
-                        ? 'header__menu active'
-                        : 'header__menu'
-                }
+                className={menuActive ? 'header__menu active' : 'header__menu'}
                 onClick={() => getClassActive()}
             >
                 <ul
@@ -33,11 +22,7 @@ const HeaderMenu = ({ menuActive, getClassActive }: Props) => {
                     onClick={(e) => e.stopPropagation()}
                 >
                     <li className="header__item">
-                        <NavLink
-                            className="header__link"
-                            to="/"
-                            /* onClick={() => menuActive.headerMenu(false)} */
-                        >
+                        <NavLink className="header__link" to="/">
                             Home
                         </NavLink>
                     </li>
@@ -51,7 +36,7 @@ const HeaderMenu = ({ menuActive, getClassActive }: Props) => {
                             Our Stories
                             <span
                                 className={
-                                    openSubmenu && menuActive.headerMenu
+                                    openSubmenu && menuActive
                                         ? 'arrow active'
                                         : 'arrow'
                                 }
@@ -60,7 +45,7 @@ const HeaderMenu = ({ menuActive, getClassActive }: Props) => {
                         </NavLink>
                         <ul
                             className={
-                                openSubmenu && menuActive.headerMenu
+                                openSubmenu && menuActive
                                     ? 'header__sublist active'
                                     : 'header__sublist'
                             }
@@ -69,7 +54,6 @@ const HeaderMenu = ({ menuActive, getClassActive }: Props) => {
                                 <NavLink
                                     to="/himalayas"
                                     className="sublist-header__link"
-                                    /*  onClick={getClassActive} */
                                 >
                                     Himalayas
                                 </NavLink>
@@ -78,7 +62,6 @@ const HeaderMenu = ({ menuActive, getClassActive }: Props) => {
                                 <NavLink
                                     to="/alps"
                                     className="sublist-header__link"
-                                    /*  onClick={getClassActive} */
                                 >
                                     Alps
                                 </NavLink>
@@ -87,7 +70,6 @@ const HeaderMenu = ({ menuActive, getClassActive }: Props) => {
                                 <NavLink
                                     to="/tatry"
                                     className="sublist-header__link"
-                                    /*  onClick={getClassActive} */
                                 >
                                     Tatry
                                 </NavLink>
@@ -96,7 +78,6 @@ const HeaderMenu = ({ menuActive, getClassActive }: Props) => {
                                 <NavLink
                                     to="/tahtali"
                                     className="sublist-header__link"
-                                    /* onClick={getClassActive} */
                                 >
                                     Tahtali
                                 </NavLink>
@@ -104,10 +85,7 @@ const HeaderMenu = ({ menuActive, getClassActive }: Props) => {
                         </ul>
                     </li>
                     <li className="header__item">
-                        <NavLink
-                            to="/contactsUs"
-                            className="header__link" /* onClick={getClassActive} */
-                        >
+                        <NavLink to="/contactsUs" className="header__link">
                             Contact US
                         </NavLink>
                     </li>

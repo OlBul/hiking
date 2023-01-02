@@ -5,24 +5,14 @@ import logo from '../../assets/image/logo.jpg'
 import HeaderMenu from 'components/HeaderMenu/HeaderMenu'
 import { SearchForm } from 'components/FormSections/Forms'
 
-type MenuProps = {
-    headerMenu: boolean
-    bodyMenu: string
-}
-
 const Header = () => {
-    const [menuActive, setMenuActive] = useState<MenuProps>({
-        headerMenu: false,
-        bodyMenu: (document.body.style.overflow = 'visible'),
-    })
+    const [menuActive, setMenuActive] = useState<boolean>(false)
 
     const getClassActive = () => {
-        setMenuActive((prevState: MenuProps) => ({
-            headerMenu: !prevState.headerMenu,
-            bodyMenu: !prevState.headerMenu
-                ? (document.body.style.overflow = 'hidden')
-                : (document.body.style.overflow = 'visible'),
-        }))
+        setMenuActive(!menuActive)
+        !menuActive
+            ? (document.body.style.overflow = 'hidden')
+            : (document.body.style.overflow = 'visible')
     }
 
     return (
@@ -35,7 +25,7 @@ const Header = () => {
                         </div>
                         <div
                             className={
-                                menuActive.headerMenu
+                                menuActive
                                     ? 'header__burger active'
                                     : 'header__burger'
                             }
